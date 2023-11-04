@@ -1,0 +1,91 @@
+﻿@page "/archiveservicesettings"
+@using Microsoft.Extensions.Logging
+@inject ILogger<ArchiveServiceSettings> Logger
+@using ArchiveService.Management.App.Data
+@using ArchiveService.Management.App.Data.Models;
+@inject SettingsService SettingsService
+
+
+<PageTitle>Archive Service Settings</PageTitle>
+
+<MudElement HtmlTag="h1">Archive Service Settings</MudElement>
+
+
+@if (settings == null)
+{
+    <p><em>Loading Settings...</em></p>
+}
+else
+{
+    <EditForm Model="@settings" OnValidSubmit="@HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <MudGrid>
+            <MudItem xs="12" sm="7">
+                <MudCard>
+                    <MudCardContent>
+                        <MudTextField Label="Database Schame" HelperText="Max. 10 characters"
+                                  @bind-Value="settings.SchemaName" For="@(() => settings.SchemaName)" />
+                        <MudTooltip>
+                            <ChildContent>
+                                <MudCheckBox Label="Historical Archive" Class="mt-3"
+                                         @bind-Checked="settings.HistoricalArchive" For="@(() => settings.HistoricalArchive)" />
+                            </ChildContent>
+                            <TooltipContent>
+                                <MudText Typo="Typo.body2">Checking this box will enable daily archive of every new table.</MudText>
+                            </TooltipContent>
+                        </MudTooltip>
+                        <MudTooltip>
+                            <ChildContent>
+                                <MudCheckBox Label="Change Log Enabled"
+                                         @bind-Checked="settings.ChangeLogEnabled" For="@(() => settings.ChangeLogEnabled)" />
+                            </ChildContent>
+                            <TooltipContent>
+                                <MudText Typo="Typo.body2">Checking this box will default Change Log turned on for tables as they are added.</MudText>
+                            </TooltipContent>
+                        </MudTooltip>
+                        <MudTextField Label="Service End Point Id" HelperText="GUID of the Service Bus Endpoint in Dataverse. Use Plugin Registration Tool to retrieve." Class="mt-3"
+                        @bind-Value="settings.ServiceEndPointId" For="@(() => settings.ServiceEndPointId)" InputType="InputType.Text" />
+                        <MudTextField Label="Datavese URL" HelperText="Url to the Dataverse environment. Changed in the service configuration in the Azure Portal." Class="mt-3"
+                                  @bind-Value="settings.DataverseUrl" For="@(() => settings.DataverseUrl)" InputType="InputType.Url" ReadOnly="true"  />
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Submit</MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+            <MudItem xs="12" sm="5">
+                <MudPaper Class="pa-4 mud-height-full">
+
+                    <MudText Color="@Color.Error">
+                        <ValidationSummary />
+                    </MudText>
+
+                </MudPaper>
+            </MudItem>
+            <MudItem xs="12">
+                <MudText Typo="Typo.body2" Align="Align.Center">
+                    Fill out the form correctly to see the success message.
+                </MudText>
+            </MudItem>
+        </MudGrid>
+    </EditForm>
+}
+
+@code {
+    private ArchiveServiceSetting settings;
+
+    protected override async Task OnInitializedAsync()
+    {
+        settings = await SettingsService.GetServiceSettingsAsync();
+    }
+
+    private void HandleValidSubmit()
+    {
+        Logger.LogInformation("HandleValidSubmit called");
+
+        // Process the valid form
+    }
+
+
+
+}

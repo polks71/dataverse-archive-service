@@ -1,0 +1,20 @@
+﻿{
+  "suppressINotifyPattern": false,
+  "suppressGeneratedCodeAttribute": false,
+  "language": "CS",
+  "namespace": "ArchiveService.Management.App.Data.Models.Dataverse",
+  "serviceContextName": "dataverse",
+  "generateActions": false,
+  "generateGlobalOptionSets": false,
+  "emitFieldsClasses": true,
+  "entityTypesFolder": "Entities",
+  "messagesTypesFolder": "Messages",
+  "optionSetsTypesFolder": "OptionSets",
+  "entityNamesFilter": [
+    "sdkmessageprocessingstep",
+    "entity",
+    "sdkmessagefilter",
+    "sdkmessage",
+    "plugintype"
+  ]
+}

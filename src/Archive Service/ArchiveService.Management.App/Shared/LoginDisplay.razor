@@ -1,0 +1,23 @@
+﻿<AuthorizeView>
+    <Authorized>
+        <MudText Typo="Typo.body1">Hello, @context.User.Identity?.Name!</MudText>
+        
+        <MudElement HtmlTag="a"
+                    Class="ma-0"
+                    Style="color:red;font-weight:bold;"
+                    href="MicrosoftIdentity/Account/SignOut">
+            Logout
+        </MudElement>
+
+
+    </Authorized>
+    <NotAuthorized>
+        <MudElement HtmlTag="a"
+                    Class="ma-0"
+                    Style="color:red;font-weight:bold;"
+                    href="MicrosoftIdentity/Account/SignIn">
+            Log In
+        </MudElement>
+        
+    </NotAuthorized>
+</AuthorizeView>

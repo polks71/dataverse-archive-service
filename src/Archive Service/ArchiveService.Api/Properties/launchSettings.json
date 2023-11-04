@@ -1,0 +1,25 @@
+{
+  "profiles": {
+    "ArchiveService.MaintainSqlTables.Staging": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7260",
+      "environmentVariables": {
+        "AZURE_FUNCTIONS_ENVIRONMENT": "Staging"
+      }
+    },
+    "ArchiveService.MaintainSqlTables.Production": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7260",
+      "environmentVariables": {
+        "AZURE_FUNCTIONS_ENVIRONMENT": "Production"
+      }
+    },
+    "ArchiveService.MaintainSqlTables": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7260",
+      "environmentVariables": {
+        "AZURE_FUNCTIONS_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

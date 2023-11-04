@@ -1,0 +1,1 @@
+DbContext “Server=tcp:rjb-archive-service-dev.database.windows.net,1433;Authentication=ActiveDirectoryInteractive;Database=rjb-archive-service-dev;User ID=ross.boe@trunorthdynamics.com;” Microsoft.EntityFrameworkCore.SqlServer -OutputDir "Data\Models" -Schemas "dbo" -Context "ArchiveServiceContext" -DataAnnotations -NoOnConfiguring -Force

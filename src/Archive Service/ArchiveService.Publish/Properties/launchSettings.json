@@ -1,0 +1,25 @@
+{
+  "profiles": {
+    "ArchiveService.Publish": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7260",
+      "environmentVariables": {
+        "AZURE_FUNCTIONS_ENVIRONMENT": "Development"
+      }
+    },
+    "ArchiveService.Publish.Staging": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7260",
+      "environmentVariables": {
+        "AZURE_FUNCTIONS_ENVIRONMENT": "Staging"
+      }
+    },
+    "ArchiveService.Publish.Production": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7260",
+      "environmentVariables": {
+        "AZURE_FUNCTIONS_ENVIRONMENT": "Production"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "createtableconnection__fullyQualifiedNamespace": "YOUR-SERVICEBUS-NAMESPACE.servicebus.windows.net",
+    "createtable": "createtable",
+    "altertableconnection__fullyQualifiedNamespace": "YOUR-SERVICEBUS-NAMESPACE.servicebus.windows.net",
+    "altertable": "altertable",
+    "archivetableconnection__fullyQualifiedNamespace": "YOUR-SERVICEBUS-NAMESPACE.servicebus.windows.net",
+    "archivetablequeue": "archivetable",
+    "changelogconnection__fullyQualifiedNamespace": "YOUR-SERVICEBUS-NAMESPACE.servicebus.windows.net",
+    "changelog": "changelog"
+  }
+}

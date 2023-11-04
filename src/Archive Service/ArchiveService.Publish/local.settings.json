@@ -1,0 +1,13 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "publishqueueconnection__fullyQualifiedNamespace": "YOUR-SERVICEBUS-NAMESPACE.servicebus.windows.net",
+    "publish": "dataverse",
+    "dailyArchiveTimerTrigger": "0 30 9 * * *",
+    "archivetableconnection__fullyQualifiedNamespace": "YOUR-SERVICEBUS-NAMESPACE.servicebus.windows.net",
+    "archivetablequeue": "archivetable"
+
+  }
+}

@@ -1,0 +1,227 @@
+{
+    "BusinessUnitId": "96471263-5770-ec11-8941-000d3a3ba961",
+    "CorrelationId": "b41f9d5a-8e30-4fdc-9098-3a4e64955bbc",
+    "Depth": 1,
+    "InitiatingUserAzureActiveDirectoryObjectId": "df88f1a5-f435-4c9a-9a41-65752f1ac925",
+    "InitiatingUserId": "894e1263-5770-ec11-8941-000d3a3ba961",
+    "InputParameters": [
+        {
+            "key": "Target",
+            "value": {
+                "__type": "Entity:http://schemas.microsoft.com/xrm/2011/Contracts",
+                "Attributes": [
+                    {
+                        "key": "ownershipcode",
+                        "value": {
+                            "__type": "OptionSetValue:http://schemas.microsoft.com/xrm/2011/Contracts",
+                            "Value": 2
+                        }
+                    },
+                    {
+                        "key": "sic",
+                        "value": "1234"
+                    },
+                    {
+                        "key": "industrycode",
+                        "value": {
+                            "__type": "OptionSetValue:http://schemas.microsoft.com/xrm/2011/Contracts",
+                            "Value": 1
+                        }
+                    },
+                    {
+                        "key": "accountid",
+                        "value": "619b0951-a4a4-ed11-aad0-000d3a35156a"
+                    },
+                    {
+                        "key": "modifiedon",
+                        "value": "/Date(1677324376000)/"
+                    },
+                    {
+                        "key": "modifiedby",
+                        "value": {
+                            "__type": "EntityReference:http://schemas.microsoft.com/xrm/2011/Contracts",
+                            "Id": "894e1263-5770-ec11-8941-000d3a3ba961",
+                            "KeyAttributes": [],
+                            "LogicalName": "systemuser",
+                            "Name": null,
+                            "RowVersion": null
+                        }
+                    },
+                    {
+                        "key": "modifiedonbehalfby",
+                        "value": null
+                    }
+                ],
+                "EntityState": null,
+                "FormattedValues": [],
+                "Id": "619b0951-a4a4-ed11-aad0-000d3a35156a",
+                "KeyAttributes": [],
+                "LogicalName": "account",
+                "RelatedEntities": [],
+                "RowVersion": "5299556"
+            }
+        }
+    ],
+    "IsExecutingOffline": false,
+    "IsInTransaction": false,
+    "IsOfflinePlayback": false,
+    "IsolationMode": 1,
+    "MessageName": "Update",
+    "Mode": 1,
+    "OperationCreatedOn": "/Date(1677324376000+0000)/",
+    "OperationId": "c4b42f37-ffb4-ed11-83fd-000d3a5c6c53",
+    "OrganizationId": "815c26b0-8594-452e-9651-1add23d36da2",
+    "OrganizationName": "unq815c26b08594452e96511add23d36",
+    "OutputParameters": [],
+    "OwningExtension": {
+        "Id": "c07f86ac-fdb4-ed11-83fd-000d3a5c6c53",
+        "KeyAttributes": [],
+        "LogicalName": "sdkmessageprocessingstep",
+        "Name": null,
+        "RowVersion": null
+    },
+    "ParentContext": {
+        "BusinessUnitId": "96471263-5770-ec11-8941-000d3a3ba961",
+        "CorrelationId": "b41f9d5a-8e30-4fdc-9098-3a4e64955bbc",
+        "Depth": 1,
+        "InitiatingUserAzureActiveDirectoryObjectId": "df88f1a5-f435-4c9a-9a41-65752f1ac925",
+        "InitiatingUserId": "894e1263-5770-ec11-8941-000d3a3ba961",
+        "InputParameters": [
+            {
+                "key": "Target",
+                "value": {
+                    "__type": "Entity:http://schemas.microsoft.com/xrm/2011/Contracts",
+                    "Attributes": [
+                        {
+                            "key": "ownershipcode",
+                            "value": {
+                                "__type": "OptionSetValue:http://schemas.microsoft.com/xrm/2011/Contracts",
+                                "Value": 2
+                            }
+                        },
+                        {
+                            "key": "sic",
+                            "value": "1234"
+                        },
+                        {
+                            "key": "industrycode",
+                            "value": {
+                                "__type": "OptionSetValue:http://schemas.microsoft.com/xrm/2011/Contracts",
+                                "Value": 1
+                            }
+                        },
+                        {
+                            "key": "accountid",
+                            "value": "619b0951-a4a4-ed11-aad0-000d3a35156a"
+                        }
+                    ],
+                    "EntityState": null,
+                    "FormattedValues": [],
+                    "Id": "619b0951-a4a4-ed11-aad0-000d3a35156a",
+                    "KeyAttributes": [],
+                    "LogicalName": "account",
+                    "RelatedEntities": [],
+                    "RowVersion": null
+                }
+            },
+            {
+                "key": "x-ms-app-name",
+                "value": "crbf2_rjb"
+            },
+            {
+                "key": "SuppressDuplicateDetection",
+                "value": false
+            }
+        ],
+        "IsExecutingOffline": false,
+        "IsInTransaction": false,
+        "IsOfflinePlayback": false,
+        "IsolationMode": 1,
+        "MessageName": "Update",
+        "Mode": 1,
+        "OperationCreatedOn": "/Date(1677324376000+0000)/",
+        "OperationId": "c4b42f37-ffb4-ed11-83fd-000d3a5c6c53",
+        "OrganizationId": "815c26b0-8594-452e-9651-1add23d36da2",
+        "OrganizationName": "unq815c26b08594452e96511add23d36",
+        "OutputParameters": [],
+        "OwningExtension": {
+            "Id": "c07f86ac-fdb4-ed11-83fd-000d3a5c6c53",
+            "KeyAttributes": [],
+            "LogicalName": "sdkmessageprocessingstep",
+            "Name": null,
+            "RowVersion": null
+        },
+        "ParentContext": null,
+        "PostEntityImages": [],
+        "PreEntityImages": [],
+        "PrimaryEntityId": "619b0951-a4a4-ed11-aad0-000d3a35156a",
+        "PrimaryEntityName": "account",
+        "RequestId": "540502d9-1730-40a5-959e-90985302a977",
+        "SecondaryEntityName": "none",
+        "SharedVariables": [
+            {
+                "key": "IsAutoTransact",
+                "value": true
+            },
+            {
+                "key": "x-ms-app-name",
+                "value": "crbf2_rjb"
+            },
+            {
+                "key": "ChangedEntityTypes",
+                "value": [
+                    {
+                        "__type": "KeyValuePairOfstringstring:#System.Collections.Generic",
+                        "key": "account",
+                        "value": "Update"
+                    }
+                ]
+            }
+        ],
+        "Stage": 30,
+        "UserAzureActiveDirectoryObjectId": "df88f1a5-f435-4c9a-9a41-65752f1ac925",
+        "UserId": "894e1263-5770-ec11-8941-000d3a3ba961"
+    },
+    "PostEntityImages": [
+        {
+            "key": "AsynchronousStepPrimaryName",
+            "value": {
+                "Attributes": [
+                    {
+                        "key": "name",
+                        "value": "A. Datum Corporation (sample)"
+                    },
+                    {
+                        "key": "accountid",
+                        "value": "619b0951-a4a4-ed11-aad0-000d3a35156a"
+                    }
+                ],
+                "EntityState": null,
+                "FormattedValues": [],
+                "Id": "619b0951-a4a4-ed11-aad0-000d3a35156a",
+                "KeyAttributes": [],
+                "LogicalName": "account",
+                "RelatedEntities": [],
+                "RowVersion": null
+            }
+        }
+    ],
+    "PreEntityImages": [],
+    "PrimaryEntityId": "619b0951-a4a4-ed11-aad0-000d3a35156a",
+    "PrimaryEntityName": "account",
+    "RequestId": "540502d9-1730-40a5-959e-90985302a977",
+    "SecondaryEntityName": "none",
+    "SharedVariables": [
+        {
+            "key": "IsAutoTransact",
+            "value": true
+        },
+        {
+            "key": "x-ms-app-name",
+            "value": "crbf2_rjb"
+        }
+    ],
+    "Stage": 40,
+    "UserAzureActiveDirectoryObjectId": "df88f1a5-f435-4c9a-9a41-65752f1ac925",
+    "UserId": "894e1263-5770-ec11-8941-000d3a3ba961"
+}

@@ -1,0 +1,5 @@
+{
+  "keyvaulturl": "https://rjbarchiveservicedev.vault.azure.net/",
+  "dataverseUrl": "https://orgb569cb44.crm.dynamics.com",
+  "SqlSettings:SqlConnectionString": "Data Source=tcp:rjb-archive-service-dev.database.windows.net,1433;Initial Catalog=rjb-archive-service-dev;Authentication=Active Directory Default; Encrypt=True;Max Pool Size=25;Pooling=true;Connect Timeout=60"
+}

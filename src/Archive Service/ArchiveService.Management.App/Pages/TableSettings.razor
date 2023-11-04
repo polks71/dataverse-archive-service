@@ -1,0 +1,106 @@
+﻿@page "/tablesettings"
+@using Microsoft.Extensions.Logging
+@using ArchiveService.Management.App.Data
+@using ArchiveService.Management.App.Data.Models;
+@using System.Collections.ObjectModel;
+
+@inject ILogger<ArchiveServiceSettings> Logger
+@inject TablesService TablesService
+@inject ISnackbar Snackbar
+
+
+
+
+<MudDataGrid T="ArchiveTableSetting" ReadOnly="false" MultiSelection="false" Items="@settings" SortMode="SortMode.Multiple" Filterable="true" QuickFilter="@_quickFilter"
+             Hideable="true" Striped="true" EditMode="DataGridEditMode.Form" EditTrigger="DataGridEditTrigger.Manual" Dense="true" Bordered="true" CommittedItemChanges="@CommittedItemChanges" >
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">Archive Service Table Settings</MudText>
+        <MudSpacer />
+        <MudTextField @bind-Value="_searchString" Placeholder="Search" Adornment="Adornment.Start" Immediate="true"
+                      AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent>
+    <Columns>
+        @*<SelectColumn T="ArchiveTableSetting" />*@
+        <PropertyColumn Property="x => x.DisplayName" Title="Display Name" IsEditable="false" />
+        <PropertyColumn Property="x => x.LogicalName" Title="Logical Name" IsEditable="false" />
+        <PropertyColumn Property="x => x.ArchiveEnabled" Title="Daily Archive Enabled">
+            <CellTemplate>
+                <MudCheckBox @bind-Checked="context.Item.ArchiveEnabled" />
+            </CellTemplate>
+            <EditTemplate>
+                <MudCheckBox Label="Archive Enabled"
+                             @bind-Checked="context.Item.ArchiveEnabled" />
+            </EditTemplate>
+        </PropertyColumn>
+        <PropertyColumn Property="x => x.ChangeLogEnabled" Title="Change Log Enabled" >
+            <CellTemplate>
+                <MudCheckBox @bind-Checked="context.Item.ChangeLogEnabled" />
+            </CellTemplate>
+            <EditTemplate>
+                <MudCheckBox Label="Change Log Enabled"
+                             @bind-Checked="context.Item.ChangeLogEnabled" />
+            </EditTemplate>
+        </PropertyColumn>        
+        <PropertyColumn Property="x => x.LastChangeTrackingToken" Title="Last Change Tracking Token" Filterable="false" IsEditable="false" />
+        <PropertyColumn Property="x => x.ChangeLogPluginStepId" Title="Change Log Plugin StepId" IsEditable="false" />
+        <TemplateColumn CellClass="justify-end" Filterable="false">
+            <CellTemplate>
+                <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" OnClick="@context.Actions.StartEditingItemAsync" />
+            </CellTemplate>
+        </TemplateColumn>
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="ArchiveTableSetting" />
+    </PagerContent>
+</MudDataGrid>
+
+<MudOverlay Visible="_overlayVisible" DarkBackground="true" ZIndex="9999">
+    <MudText>Validating Dataverse and saving to database</MudText>
+</MudOverlay>
+
+@code {
+    private ObservableCollection<ArchiveTableSetting> settings;
+    private string _searchString;
+    private bool _overlayVisible = false;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        settings = await TablesService.GetTablesAsync();
+    }
+    // quick filter - filter gobally across multiple columns with the same input
+    private Func<ArchiveTableSetting, bool> _quickFilter => x =>
+    {
+        if (string.IsNullOrWhiteSpace(_searchString))
+            return true;
+        if (!string.IsNullOrWhiteSpace(x.LogicalName) && x.LogicalName.Contains(_searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (!string.IsNullOrWhiteSpace(x.DisplayName) && x.DisplayName.Contains(_searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        return false;
+    };
+
+    void CommittedItemChanges(ArchiveTableSetting item)
+    {
+        _overlayVisible = true;
+        StateHasChanged();
+        Logger.LogTrace(System.Text.Json.JsonSerializer.Serialize(item));
+        //handle the change of ChangeLog
+        TablesService.AddOrRemoveServiceEndPointStep(item);
+        //handle the change of Archive Enabled
+        if (TablesService.ValidateTableHasChangeTrackingEnabled(item))
+        {
+            TablesService.SaveTableSetting(item);
+            Snackbar.Add($"Change Saved to {item.LogicalName}", Severity.Normal);
+            _overlayVisible = false;
+            StateHasChanged();
+        }
+        else
+        {
+            Snackbar.Add($"Dataverse Table {item.LogicalName} does not have Change Tracking Enabled to change Archive Setting", Severity.Error);
+            _overlayVisible = false;
+            StateHasChanged();
+        }
+        
+    }
+}

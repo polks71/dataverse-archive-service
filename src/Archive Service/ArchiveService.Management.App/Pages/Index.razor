@@ -1,0 +1,19 @@
+﻿@page "/"
+
+<PageTitle>Archive Service</PageTitle>
+<MudContainer Fixed="true">
+    <MudText Typo="Typo.h1">Archive Service Description</MudText>
+    <MudText Typo="Typo.body1">The Archive Service has three main functions that enable it to archive data from Dataverse.</MudText>
+    <MudText Typo="Typo.h2">Publish Service</MudText>
+    <MudText Typo="Typo.body1">The Publish service receives a message when Dataverse publishes changes. This triggers the service to update the schema in the SQL Database to match that of the Dataverse table</MudText>
+    <MudText Typo="Typo.body1">The service split into two path. Create table and Update table depending on if the table already exists in SQL Server</MudText>
+
+    <MudText Typo="Typo.h2">Daily Archive Service</MudText>
+    <MudText Typo="Typo.body1">The Daily Archive service is pretty much what it sounds like. At a scheduled interval (using CRON syntax) the service will trigger an update of all tables with Historical Archive enabled.</MudText>
+    <MudText Typo="Typo.body1">To minimize hits on the Datavese API the processes uses the Change Tracking feature, <strong>so only tables with Change Tracking enabled will be archived</strong></MudText>
+
+    <MudText Typo="Typo.h2">Change Log Service</MudText>
+    <MudText Typo="Typo.body1">The  Change Log service will add a step to the Service Endpoint referenced by Service EndointId for the table. It will trigger for all attributes</MudText>
+    <MudText Typo="Typo.body1">The service receives the messages for every Create, Update, and Delete from the table and inserts rows into a table in a SQL Schema, {SchemaName}Log. </MudText>
+
+</MudContainer>

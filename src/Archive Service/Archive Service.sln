@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{D9A227D0-3524-421D-A862-C3FF81483424}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchiveService.Shared", "ArchiveService.Shared\ArchiveService.Shared.csproj", "{08B31C9B-CB63-4BF6-96DE-B2643DD86855}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7E2C20FA-08AB-49B1-B750-6BB562B8789A}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchiveService.Publish", "ArchiveService.Publish\ArchiveService.Publish.csproj", "{DDE6068F-AE3F-4CBD-B743-554BB2E2ED78}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchiveService.Dataverse.Api", "ArchiveService.Api\ArchiveService.Dataverse.Api.csproj", "{C4503B0E-A82B-4C08-9A20-EAD009B5EAC9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchiveService.Management.App", "ArchiveService.Management.App\ArchiveService.Management.App.csproj", "{D0336441-C9DB-40A9-BBEC-78B8EBDE7701}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08B31C9B-CB63-4BF6-96DE-B2643DD86855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08B31C9B-CB63-4BF6-96DE-B2643DD86855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08B31C9B-CB63-4BF6-96DE-B2643DD86855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08B31C9B-CB63-4BF6-96DE-B2643DD86855}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDE6068F-AE3F-4CBD-B743-554BB2E2ED78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDE6068F-AE3F-4CBD-B743-554BB2E2ED78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDE6068F-AE3F-4CBD-B743-554BB2E2ED78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDE6068F-AE3F-4CBD-B743-554BB2E2ED78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4503B0E-A82B-4C08-9A20-EAD009B5EAC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4503B0E-A82B-4C08-9A20-EAD009B5EAC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4503B0E-A82B-4C08-9A20-EAD009B5EAC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4503B0E-A82B-4C08-9A20-EAD009B5EAC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0336441-C9DB-40A9-BBEC-78B8EBDE7701}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0336441-C9DB-40A9-BBEC-78B8EBDE7701}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0336441-C9DB-40A9-BBEC-78B8EBDE7701}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0336441-C9DB-40A9-BBEC-78B8EBDE7701}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A3E819B-FE2A-45B5-919B-9E22E403BC7B}
+	EndGlobalSection
+EndGlobal
